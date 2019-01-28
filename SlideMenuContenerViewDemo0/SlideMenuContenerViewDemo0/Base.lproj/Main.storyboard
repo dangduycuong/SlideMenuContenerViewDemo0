@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<device id="retina4_7" orientation="portrait">
+<adaptation id="fullscreen"/>
+</device>
+<dependencies>
+<deployment identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+<capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+<capability name="Safe area layout guides" minToolsVersion="9.0"/>
+<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+</dependencies>
+<scenes>
+<!--Container View Controller-->
+<scene sceneID="tne-QT-ifu">
+<objects>
+<viewController id="BYZ-38-t0r" customClass="ContainerViewController" customModule="SlideMenuContenerView" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLS-Re-icb" userLabel="MainContainer View">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<connections>
+<segue destination="lCX-fb-Z59" kind="embed" id="ftB-0F-h3u"/>
+</connections>
+</containerView>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qel-gP-iLS" userLabel="CoverButton">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+<connections>
+<action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="REU-tY-OhS"/>
+</connections>
+</button>
+<containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2W-DO-cDA" userLabel="SlideMenuContainer">
+<rect key="frame" x="0.0" y="0.0" width="282" height="667"/>
+<connections>
+<segue destination="JGC-Ev-gVk" kind="embed" id="Pnm-wE-DSx"/>
+</connections>
+</containerView>
+</subviews>
+<color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YLS-Re-icb" secondAttribute="bottom" id="8ic-rl-qqh"/>
+<constraint firstItem="YLS-Re-icb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JA8-9n-sGI"/>
+<constraint firstItem="qel-gP-iLS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K0n-he-lPn"/>
+<constraint firstItem="qel-gP-iLS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OOC-3l-r5m"/>
+<constraint firstItem="YLS-Re-icb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="P5P-zv-iVW"/>
+<constraint firstItem="qel-gP-iLS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TJQ-ix-mBn"/>
+<constraint firstItem="m2W-DO-cDA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V9g-Yq-psT"/>
+<constraint firstItem="m2W-DO-cDA" firstAttribute="width" secondItem="YLS-Re-icb" secondAttribute="width" multiplier="0.75" id="YNT-Ff-hl4"/>
+<constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qel-gP-iLS" secondAttribute="bottom" id="ZMR-5d-ih6"/>
+<constraint firstItem="m2W-DO-cDA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Zs7-LV-Nq4"/>
+<constraint firstItem="m2W-DO-cDA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jMf-tx-3UC"/>
+<constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YLS-Re-icb" secondAttribute="trailing" id="v2N-lz-B18"/>
+</constraints>
+<viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+</view>
+<connections>
+<outlet property="buttonBackGround" destination="qel-gP-iLS" id="dtm-ZK-Go4"/>
+<outlet property="leadingSlideMenu" destination="V9g-Yq-psT" id="IHS-Jp-al3"/>
+<outlet property="slideContainerMenuView" destination="m2W-DO-cDA" id="j0i-bq-dbm"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="116" y="116"/>
+</scene>
+<!--Slide Container View Controller-->
+<scene sceneID="3Z3-pG-dlA">
+<objects>
+<tableViewController id="JGC-Ev-gVk" customClass="SlideContainerViewController" customModule="SlideMenuContenerView" customModuleProvider="target" sceneMemberID="viewController">
+<tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HnZ-dd-UK5">
+<rect key="frame" x="0.0" y="0.0" width="282" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<prototypes>
+<tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CqV-02-pLt">
+<rect key="frame" x="0.0" y="28" width="282" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CqV-02-pLt" id="8kn-Zt-7jd">
+<rect key="frame" x="0.0" y="0.0" width="282" height="43.5"/>
+<autoresizingMask key="autoresizingMask"/>
+</tableViewCellContentView>
+</tableViewCell>
+</prototypes>
+<connections>
+<outlet property="dataSource" destination="JGC-Ev-gVk" id="KXs-En-a5F"/>
+<outlet property="delegate" destination="JGC-Ev-gVk" id="5LI-Xp-bhE"/>
+</connections>
+</tableView>
+</tableViewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="V04-cJ-8pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="115" y="927"/>
+</scene>
+<!--Main View Controller-->
+<scene sceneID="4ta-pV-tBT">
+<objects>
+<viewController id="DnC-ck-zZr" customClass="MainViewController" customModule="SlideMenuContenerView" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="4e4-Au-P82">
+<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<viewLayoutGuide key="safeArea" id="lwc-8b-sP4"/>
+</view>
+<navigationItem key="navigationItem" id="80f-9r-Gnn">
+<barButtonItem key="leftBarButtonItem" title="Menu" id="UII-JH-Vxf">
+<connections>
+<action selector="openSlideMenu:" destination="DnC-ck-zZr" id="fsY-4a-VFk"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="y8D-kT-Hb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2129" y="117"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="JYv-NK-p3c">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="lCX-fb-Z59" sceneMemberID="viewController">
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tD9-rW-QH0">
+<rect key="frame" x="0.0" y="20" width="375" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="DnC-ck-zZr" kind="relationship" relationship="rootViewController" id="DGJ-B3-ArB"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="O6R-nr-E3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1158" y="117"/>
+</scene>
+</scenes>
+</document>
